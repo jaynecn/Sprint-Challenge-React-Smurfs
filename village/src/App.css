@@ -1,9 +1,10 @@
 .App {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 800px;
-  align: center;
   text-decoration: none;
 
 }
@@ -19,6 +20,8 @@
   color: white;
   text-align: center;
 }
+
+
 
 .nav-button{
   text-decoration: none;
@@ -45,10 +48,62 @@
 .form {
   display: flex;
   flex-direction: column;
-  
+}
+
+.form-button {
+  color: white;
+  text-decoration: none;
+  background: dodgerblue;
+  padding: 10px;
 }
 
 .input {
   background: lightblue;
   color: black;
+  border: 1px dotted black;
+  margin: 2px;
+  height: 20px;
+  width: 150px;
+}
+
+input::placeholder {
+  color: darkblue;
+  padding: 5px;
+  text-align: center;
+  
+}
+
+.Smurf {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px dashed darkslategray;
+  margin: 10px;
+}
+
+.Smurf h3 {
+  color: darkslateblue;
+}
+.Smurf strong {
+  color: darkmagenta;
+}
+
+.Smurfs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Smurfs h2 {
+  width: 300px;
+}
+
+.smurf-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -37,7 +37,7 @@ class App extends Component {
         <h1>Welcome to the Land of Smurfs</h1>
         <div className="nav-bar">
           <NavLink exact to="/" activeClassName="activeNavButton" className="nav-button">Smurfs</NavLink>
-          <NavLink to="/smurf-form" activeClassName="activeNavButton">Add a New Smurf</NavLink>
+          <NavLink to="/smurf-form" activeClassName="activeNavButton" className="nav-button">Add a New Smurf</NavLink>
         </div>
         <Route exactpath="/smurf-form" render={props => 
         <SmurfForm {...props} addSmurf={props.addSmurf}handleInputChange={this.props.handleInputChange}/>} />
