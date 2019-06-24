@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import {NavLink} from 'react-router-dom';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -13,12 +15,26 @@ class SmurfForm extends Component {
   addSmurf = event => {
     event.preventDefault();
     // add code to create the smurf using the api
-
     this.setState({
       name: '',
       age: '',
       height: ''
-    });
+      });
+    
+    const newSmurf = {
+      name: this.state.name,
+      age: this.state.age,
+      height: this.state.height
+    }
+
+    axios
+      .post('http://localhost:3333/smurfs', newSmurf)
+      .then (res => {
+        console.log(res)
+    })
+      .catch(error => {
+        console.log(error.message);
+      });
   }
 
   handleInputChange = e => {
@@ -28,26 +44,26 @@ class SmurfForm extends Component {
   render() {
     return (
       <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
-          <input
+        <form className="form" onSubmit={this.addSmurf}>
+          <input className="input"
             onChange={this.handleInputChange}
             placeholder="name"
             value={this.state.name}
             name="name"
           />
-          <input
+          <input className="input"
             onChange={this.handleInputChange}
             placeholder="age"
             value={this.state.age}
             name="age"
           />
-          <input
+          <input className="input"
             onChange={this.handleInputChange}
             placeholder="height"
             value={this.state.height}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <NavLink to="/smurfs" className="form-button" onClick={this.addSmurf} button type="submit">Add to the village</NavLink>
         </form>
       </div>
     );
